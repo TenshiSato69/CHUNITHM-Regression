@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #just change the file name below and remove title data since it doesn't read UTF-8
-chuni = pd.read_csv("chunithm_record_2025-08-20T17_41_08.734Z.csv")
+chuni = pd.read_csv("chuni.csv")
 
 #this is for score analysis
 ranks = ["S", "S+", "SS", "SS+", "SSS", "SSS+", "AJ"]
