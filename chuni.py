@@ -32,8 +32,14 @@ z = np.polyfit(filtered_chuni["const"], filtered_chuni["rating"], 1)
 p = np.poly1d(z)
 plt.plot(filtered_chuni["const"], p(filtered_chuni["const"]), "r--", label="Regression Line")
 
-# Display regression formula
-formula = f"y = {z[0]:.3f}x + {z[1]:.3f}"
+# Calculate R^2
+correlation_matrix = np.corrcoef(filtered_chuni["const"], filtered_chuni["rating"])
+correlation_xy = correlation_matrix[0,1]
+r_squared = correlation_xy**2
+print(f"R^2: {r_squared:.4f}")
+
+# Display regression formula and R^2 on the plot
+formula = f"y = {z[0]:.3f}x + {z[1]:.3f}\n$R^2$ = {r_squared:.4f}"
 plt.text(14.1, 17.6, formula, color="red", fontsize=12)
 
 #if rating, use 0 to 17.7
